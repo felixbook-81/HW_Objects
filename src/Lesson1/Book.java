@@ -28,6 +28,9 @@ public class Book {
         // Создали сеттер — метод, который меняет значение
         this.publication = publication;
     }
+     @Override
+    public String toString() {     // Добавляем метод toString()
+        return "Название -" + " " + this.bookTitle + "     " + "Автор -" +this.author;
 
     @Override
     public boolean equals(Object obj) {
