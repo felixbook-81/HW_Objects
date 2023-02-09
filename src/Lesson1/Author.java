@@ -39,6 +39,18 @@ public class Author {
 
 
     }
+    @Override
+    public boolean equals(Object obj) {
+        
+        if (this == obj) return true;
+        if (obj == null || this.getClass() != obj.getClass()) return false;
+        Author author = (Author) obj;
+        return surname == author.surname && Objects.equals(name, author.surname );
+        
+
+
+    }
+
 
     @Override
     public int hashCode() {
