@@ -1,4 +1,4 @@
-package Lesson2.transport;
+package Lesson2;
 
 public class Car {
     private final String brand;

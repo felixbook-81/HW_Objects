@@ -1,6 +1,6 @@
 package Lesson2.transport;
 
-import Lesson2.transport.Car;
+import Lesson2.Car;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,16 +14,12 @@ public class Main {
                         1.7,
                         "АКПП",
                         "sedan",
-                        "x000xxx",
+                        "x434dgd",
                         4,
                         true );
 
-                System.out.println("Автомобиль- " + lada.getBrand() + lada.getModel());
-                System.out.println("Цвет - " + lada.getColor());
-                System.out.println("Сборка в  " + lada.getCountry());
-                System.out.println(lada.getPublishingYear() + "   год выпуска");
-                System.out.println("Обьем двигателя - " + +lada.getEngineVolume());
 
+                System.out.println(lada);
                 System.out.println("---------------------------------------------------------");
 
 
@@ -35,17 +31,13 @@ public class Main {
                         3.0,
                         "МКПП",
                         "sedan",
-                        "x000xx000",
+                        "x345xx777",
                         4,
                         false);
 
-                System.out.println("Автомобиль - " + audi.getBrand() + audi.getModel());
-                System.out.println("Цвет - " + audi.getColor());
-                System.out.println("Сборка -  " + audi.getCountry());
-                System.out.println("Год выпуска - " + audi.getPublishingYear());
-                System.out.println("Обьем двигателя - " + +audi.getEngineVolume());
 
 
+                System.out.println(audi);
                 System.out.println("---------------------------------------------------------");
 
                 Car bmw = new Car("BMW ",
@@ -60,12 +52,8 @@ public class Main {
                         4,
                         false);
 
-                System.out.println("Автомобиль- " + bmw.getBrand() + bmw.getModel());
-                System.out.println("Цвет - " + bmw.getColor());
-                System.out.println("Сборка -  " + bmw.getCountry());
-                System.out.println("Год выпуска - " + bmw.getPublishingYear());
-                System.out.println("Обьем двигателя - " + +bmw.getEngineVolume());
 
+                System.out.println(bmw);
                 System.out.println("---------------------------------------------------------");
 
                 Car kia = new Car("Kia ",
@@ -76,16 +64,12 @@ public class Main {
                         2.4,
                         "АКПП",
                         "sedan",
-                        "x000xx000",
+                        "x988xx777",
                         4,
                         false);
 
-                System.out.println("Автомобиль- " + kia.getBrand() + kia.getModel());
-                System.out.println("Цвет - " + kia.getColor());
-                System.out.println("Сборка -  " + kia.getCountry());
-                System.out.println("Год выпуска - " + kia.getPublishingYear());
-                System.out.println("Обьем двигателя - " + +kia.getEngineVolume());
 
+                System.out.println(kia);
                 System.out.println("---------------------------------------------------------");
 
                 Car hyundai = new Car("Hyundai ",
@@ -96,15 +80,11 @@ public class Main {
                         1.6,
                         "МКПП",
                         "sedan",
-                        "x000xx000",
+                        "x111xx655",
                         4,
                         false);
 
-                System.out.println("Автомобиль- " +hyundai.getBrand() + hyundai.getModel());
-                System.out.println("Цвет - " + hyundai.getColor());
-                System.out.println("Сборка в  " + hyundai.getCountry());
-                System.out.println("Год выпуска - " + hyundai.getPublishingYear());
-                System.out.println("Обьем двигателя - " + hyundai.getEngineVolume());
+
 
                 System.out.println(hyundai);
             }
