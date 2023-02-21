@@ -1,10 +1,22 @@
-package Lesson2;
+package Lesson2.transport;
+
+import Lesson2.transport.Car;
 
 public class Main {
     public static void main(String[] args) {
 
 
-                Auto lada = new Auto("Lada ", "Granta", "yellow", "Russia", 2015, 1.7);
+                Car lada = new Car("Lada ",
+                        "Granta",
+                        "yellow",
+                        "Russia",
+                        2015,
+                        1.7,
+                        "АКПП",
+                        "sedan",
+                        "x000xxx",
+                        4,
+                        true );
 
                 System.out.println("Автомобиль- " + lada.getBrand() + lada.getModel());
                 System.out.println("Цвет - " + lada.getColor());
@@ -15,7 +27,17 @@ public class Main {
                 System.out.println("---------------------------------------------------------");
 
 
-                Auto audi = new Auto("Audi ", "A8 50 L TDI quattro", "black", "Germany", 2020, 3.0);
+                Car audi = new Car("Audi ",
+                        "A8 50 L TDI quattro",
+                        "black",
+                        "Germany",
+                        2020,
+                        3.0,
+                        "МКПП",
+                        "sedan",
+                        "x000xx000",
+                        4,
+                        false);
 
                 System.out.println("Автомобиль - " + audi.getBrand() + audi.getModel());
                 System.out.println("Цвет - " + audi.getColor());
@@ -26,7 +48,17 @@ public class Main {
 
                 System.out.println("---------------------------------------------------------");
 
-                Auto bmw = new Auto("BMW ", "Z8", "black", "Germany", 2020, 3.0);
+                Car bmw = new Car("BMW ",
+                        "Z8",
+                        "black",
+                        "Germany",
+                        2020,
+                        3.0,
+                        "МКПП",
+                        "sedan",
+                        "x000xx000",
+                        4,
+                        false);
 
                 System.out.println("Автомобиль- " + bmw.getBrand() + bmw.getModel());
                 System.out.println("Цвет - " + bmw.getColor());
@@ -36,7 +68,17 @@ public class Main {
 
                 System.out.println("---------------------------------------------------------");
 
-                Auto kia = new Auto("Kia ", "Sportage", "Red", "South Korea", 2018, 2.4);
+                Car kia = new Car("Kia ",
+                        "Sportage",
+                        "Red",
+                        "South Korea",
+                        2018,
+                        2.4,
+                        "АКПП",
+                        "sedan",
+                        "x000xx000",
+                        4,
+                        false);
 
                 System.out.println("Автомобиль- " + kia.getBrand() + kia.getModel());
                 System.out.println("Цвет - " + kia.getColor());
@@ -46,7 +88,17 @@ public class Main {
 
                 System.out.println("---------------------------------------------------------");
 
-                Auto hyundai = new Auto("Hyundai ", "Avante", "Orange", "South Korea", 2016, 1.6);
+                Car hyundai = new Car("Hyundai ",
+                        "Avante",
+                        "Orange",
+                        "South Korea",
+                        2016,
+                        1.6,
+                        "МКПП",
+                        "sedan",
+                        "x000xx000",
+                        4,
+                        false);
 
                 System.out.println("Автомобиль- " +hyundai.getBrand() + hyundai.getModel());
                 System.out.println("Цвет - " + hyundai.getColor());
