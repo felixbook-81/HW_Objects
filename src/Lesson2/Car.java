@@ -141,6 +141,9 @@ public class Car {
         if ((month >= 11 && month <= 12) || (month >= 1 && month <= 3)) {
             summerTyres = false;
         }
+        if(month>=4 && month<=10){
+            summerTyres=true;
+        }
 
 
     }

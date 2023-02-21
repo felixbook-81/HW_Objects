@@ -87,6 +87,8 @@ public class Main {
 
 
                 System.out.println(hyundai);
+                hyundai.changeTyres(8);
+                System.out.println(hyundai);
             }
 
 
