@@ -16,8 +16,8 @@ public class Main {
                         "sedan",
                         "x434dgd",
                         4,
-                        true );
-
+                        true ,
+                        null);
 
                 System.out.println(lada);
                 System.out.println("---------------------------------------------------------");
@@ -33,8 +33,9 @@ public class Main {
                         "sedan",
                         "x345xx777",
                         4,
-                        false);
+                        false,
 
+                        new Car.Key(true,true));
 
 
                 System.out.println(audi);
@@ -50,7 +51,8 @@ public class Main {
                         "sedan",
                         "x000xx000",
                         4,
-                        false);
+                        false,
+                        null);
 
 
                 System.out.println(bmw);
@@ -66,7 +68,8 @@ public class Main {
                         "sedan",
                         "x988xx777",
                         4,
-                        false);
+                        false,
+                        new Car.Key(true,false));
 
 
                 System.out.println(kia);
@@ -82,13 +85,12 @@ public class Main {
                         "sedan",
                         "x111xx655",
                         4,
-                        false);
-
+                        false,
+                         new Car.Key(false,true));
 
 
                 System.out.println(hyundai);
-                hyundai.changeTyres(8);
-                System.out.println(hyundai);
+
             }
 
 

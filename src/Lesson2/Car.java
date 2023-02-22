@@ -12,6 +12,32 @@ public class Car {
     private String regNumber;
     private int capasity;
     private boolean summerTyres;
+    private Key key;
+
+    public static class Key {
+
+        private final boolean remoteRun;
+        private final boolean withoutAccess;
+
+        public Key(boolean remoteRun, boolean withoutAccess) {
+            this.remoteRun = remoteRun;
+            this.withoutAccess = withoutAccess;
+        }
+
+        public boolean isRemoteRun() {
+            return remoteRun;
+        }
+
+        public boolean isWithoutAccess() {
+            return withoutAccess;
+        }
+
+        @Override
+        public String toString() {
+            return (remoteRun ? "удаленный запуск Двиг." : "без удаленного запуска Двиг.") + "," +
+                    (withoutAccess ? "бесключевой доступ" : "бесключевой доступ отсутствует");
+        }
+    }
 
     public Car(String brand,
                String model,
@@ -23,7 +49,8 @@ public class Car {
                String bodyType,
                String regNumber,
                int capasity,
-               boolean summerTyres) {
+               boolean summerTyres,
+               Key key) {
 
 
         if (brand == null || brand.isEmpty()) {
@@ -65,6 +92,18 @@ public class Car {
         }
         this.capasity = capasity;
         this.summerTyres = summerTyres;
+        setKey(key);
+    }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public void setKey(Key key) {
+        if (key == null) {
+            key = new Key(false, false);
+        }
+        this.key = key;
     }
 
     public String getTransmission() {
@@ -137,12 +176,13 @@ public class Car {
 
         return summerTyres;
     }
+
     public void changeTyres(int month) {
         if ((month >= 11 && month <= 12) || (month >= 1 && month <= 3)) {
             summerTyres = false;
         }
-        if(month>=4 && month<=10){
-            summerTyres=true;
+        if (month >= 4 && month <= 10) {
+            summerTyres = true;
         }
 
 
@@ -162,7 +202,7 @@ public class Car {
                 ", тип кузова='" + bodyType + '\'' +
                 ", регистрационный номер: '" + regNumber + '\'' +
                 ",кол-во мест  :'" + capasity + '\'' +
-                (summerTyres ? "Летняя" : "Зимняя") + " резина" + "}";
+                (summerTyres ? "Летняя" : "Зимняя") + " резина" + "," + key + "}";
 
     }
 }
