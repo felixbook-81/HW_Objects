@@ -1,11 +1,11 @@
 package Lesson2;
 
-public class Car {
-    private final String brand;
-    private final String model;
-    private String color;
-    private final String country;
-    private final int publishingYear;
+import Lesson2.transport.Transport;
+
+public class Car extends Transport {
+
+
+
     private double engineVolume;
     private String transmission;
     private final String bodyType;
@@ -42,8 +42,11 @@ public class Car {
     public Car(String brand,
                String model,
                String color,
+
                String country,
+
                int publishingYear,
+               int speedMaxMove,
                double engineVolume,
                String transmission,
                String bodyType,
@@ -52,34 +55,11 @@ public class Car {
                boolean summerTyres,
                Key key) {
 
+      super(brand,model,publishingYear,country,color,speedMaxMove);
 
-        if (brand == null || brand.isEmpty()) {
-            brand = "default";
-        }
-        this.brand = brand;
+      setEngineVolume(engineVolume);
 
-        if (model == null || model.isEmpty()) {
-            model = "default";
-        }
-        this.model = model;
-
-        setEngineVolume(engineVolume);
-
-        setColor(color);
-
-        if (country == null || country.isEmpty()) {
-            country = "default";
-        }
-        this.country = country;
-
-
-        if ((publishingYear <= 0)) {
-            publishingYear = 2000;
-        }
-        this.publishingYear = publishingYear;
-
-
-        setTransmission(transmission);
+      setTransmission(transmission);
 
         if (bodyType == null || bodyType.isEmpty()) {
             bodyType = "sedan";
@@ -117,35 +97,12 @@ public class Car {
         this.transmission = transmission;
     }
 
-    public String getBrand() {
-        return brand;
-    }
 
 
-    public String getModel() {
-        return model;
-    }
 
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty()) {
-            color = "Белый";
-        }
-        this.color = color;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
 
-    public int getPublishingYear() {
-        return publishingYear;
-    }
 
     public double getEngineVolume() {
         return engineVolume;
@@ -191,13 +148,10 @@ public class Car {
     @Override
     public String toString() {
 
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
+        return super.toString()+ "Car{" +
+
                 ", engineVolume=" + engineVolume +
-                ", color='" + color + '\'' +
-                ", year=" + publishingYear +
-                ", country='" + country + '\'' +
+
                 ",коробка передач='" + transmission + '\'' +
                 ", тип кузова='" + bodyType + '\'' +
                 ", регистрационный номер: '" + regNumber + '\'' +
