@@ -1,23 +1,20 @@
 package Lesson2.transport;
 
-public class Transport {
+import Lesson3.Competing;
+import Lesson3.Driver;
+
+public abstract class Transport<T extends Driver> implements Competing {
     private final String brand;
+
     private final String model;
-    private final int publishingYear;
 
-    private final String country;
-    private String color;
-
-    private int speedMaxMove;
-
-
+    private double engineVolume;
+    private T driver;
 
     public Transport(String brand,
                      String model,
-                     int publishingYear,
-                     String country,
-                     String color,
-                     int speedMaxMove) {
+                     double engineVolume,
+                     T driver) {
 
         if (brand == null || brand.isEmpty()) {
             brand = "default";
@@ -30,21 +27,10 @@ public class Transport {
         }
         this.model = model;
 
-
-        if ((publishingYear <= 0)) {
-            publishingYear = 2000;
-        }
-        this.publishingYear = publishingYear;
-
-
-        if (country == null || country.isEmpty()) {
-            country = "default";
-        }
-        this.country = country;
-
-        setColor(color);
-        setSpeedMaxMove(speedMaxMove);
+        setEngineVolume(engineVolume);
+        setDriver(driver);
     }
+
 
     public String getBrand() {
         return brand;
@@ -54,43 +40,48 @@ public class Transport {
         return model;
     }
 
-    public String getColor() {
-        return color;
+    public T getDriver() {
+        return driver;
     }
 
-    public void setColor(String color) {
-        if (color == null || color.isEmpty()) {
-            color = "Белый";
+    public void setDriver(T driver) {
+        this.driver = driver;
+    }
+
+    public double getEngineVolume() {
+        return engineVolume;
+    }
+
+
+    public void setEngineVolume(double engineVolume) {
+        if (engineVolume <= 0) {
+            engineVolume = 1.6;
         }
 
-        this.color = color;
+        this.engineVolume = engineVolume;
     }
 
-    public int getSpeedMaxMove() {
-        return speedMaxMove;
+    public abstract void startMoving();
+
+
+    public abstract void finishMoving();
+
+    public void printInfo() {
+        System.out.println("Водитель" + driver.getName() + " управляет автомобилем" + getBrand() + "  и будет учавствовать в заезде");
     }
 
-    public void setSpeedMaxMove(int speedMaxMove) {
-        if (speedMaxMove <= 0) {
-            speedMaxMove = 120;
-        }
-
-
-        this.speedMaxMove = speedMaxMove;
-    }
 
     @Override
     public String toString() {
 
-        return "Car{" +
+        return
                 "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
+                        ", model='" + model + '\'' +
 
-                ", color='" + color + '\'' +
-                ", year=" + publishingYear +
-                ", country='" + country + '\'' +
-                "Максимальная скорость" + speedMaxMove + "}";
+                        ", Обьем двигателя = " + engineVolume + " }";
 
     }
 
 }
+
+

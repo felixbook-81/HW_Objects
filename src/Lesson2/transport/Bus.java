@@ -1,15 +1,15 @@
 package Lesson2.transport;
 
 
-public class Bus extends Transport {
+import Lesson3.Driver;
+
+public abstract class Bus extends Transport {
+
+
     public Bus(String brand,
                String model,
-               int publishingYear,
-               String country,
-               String color,
-               int speedMaxMove) {
-
-        super(brand, model, publishingYear, country, color, speedMaxMove);
-
+               double engineVolume,
+               Driver driver) {
+        super(brand, model, engineVolume, driver);
     }
 }
